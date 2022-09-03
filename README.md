@@ -20,9 +20,9 @@ This one is for M1 Chip. Remove tag `arm64` for Intel CPU.
 ## Login to ActiveMQ console
 `http://localhost:8161/`
 
-Username : `artemis`
-
-Password : `artemis`
+Username : `artemis` (or your custom username)
+ 
+Password : `artemis` (or your custom password)
 
 ## Sending test message via Postman
 
