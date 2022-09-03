@@ -1,0 +1,11 @@
+version: '2'
+services:
+  node0:
+    image: joylife/apache-artemis:arm64
+    container_name: artemix-basics
+    environment:
+      ARTEMIS_USER: "john"
+      ARTEMIS_PASSWORD: "mama"
+    ports:
+      - "8161:8161"
+      - "61616:61616"
