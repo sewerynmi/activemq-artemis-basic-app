@@ -1,6 +1,6 @@
 version: '2'
 services:
-  node0:
+  artemis:
     image: joylife/apache-artemis:arm64
     container_name: artemix-basics
     environment:
@@ -9,3 +9,20 @@ services:
     ports:
       - "8161:8161"
       - "61616:61616"
+  db:
+    image: arm64v8/mysql:oracle # change image for intel cpu
+    container_name: mysql-artemix-basics
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'homelessness'
+      MYSQL_USER: 'john'
+      MYSQL_PASSWORD: 'mama'
+      MYSQL_ROOT_PASSWORD: 'mama'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
