@@ -36,7 +36,7 @@ Then observe message in the app console logs.
 
 # Updates
 
-#### 03 Sept 2022
+#### 03 Sept 2022 :  Sending message to other queue specified in request body
 
 >**Added:** sending messages to a queue specified in the POST request. The queue should exist (check `application.properties` file) as receivers at this stage are 
 > designed to read messages from existing queues, so do not play hero by sending messages to unknown queues ok ? :)
