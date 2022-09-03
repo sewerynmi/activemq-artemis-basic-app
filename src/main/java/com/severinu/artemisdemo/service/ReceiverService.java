@@ -15,4 +15,9 @@ public class ReceiverService {
         log.info("Received message: " + message);
     }
 
+    @JmsListener(destination = "${jms.otherQueue}")
+    public void receiveMessageOnOtherQueue(String message) {
+        log.info("Received message on Other Queue : " + message);
+    }
+
 }

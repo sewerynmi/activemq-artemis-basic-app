@@ -1,5 +1,6 @@
 package com.severinu.artemisdemo.controller;
 
+import com.severinu.artemisdemo.dto.MessageToQueueDTO;
 import com.severinu.artemisdemo.service.DispatcherService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +23,12 @@ public class MessageController {
     public ResponseEntity<String> send (@RequestBody String message) {
         dispatcherService.sendMessage(message);
         return new ResponseEntity<>("Message set: " + message, HttpStatus.OK);
+    }
+
+    @PostMapping("/sendtoqueue")
+    public ResponseEntity<String> sendToQueue (@RequestBody MessageToQueueDTO messageToQueueDTO) {
+        dispatcherService.sendMessage(messageToQueueDTO.getQueue(), messageToQueueDTO.getMessage());
+        return new ResponseEntity<>("Message to queue : " + messageToQueueDTO.getQueue() + " set with txt:" +
+                messageToQueueDTO.getMessage(), HttpStatus.OK);
     }
 }

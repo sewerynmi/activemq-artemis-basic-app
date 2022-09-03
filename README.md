@@ -33,3 +33,23 @@ Method: `POST`
 Body (raw->Text) : `Your message here`
 
 Then observe message in the app console logs. 
+
+# Updates
+
+#### 03 Sept 2022
+
+>**Added:** sending messages to a queue specified in the POST request. The queue should exist (check `application.properties` file) as receivers at this stage are 
+> designed to read messages from existing queues, so do not play hero by sending messages to unknown queues ok ? :)
+> 
+> Example:
+`jms.otherQueue=myOtherQueue` is the other queue to which messages can be sent via POST to endpoint: 
+> 
+> `http://localhost:8080/message/sendtoqueue`
+>
+>This endpoint requires `JSON` body with keys `queue` and `message`
+> 
+> Example:
+><pre>{
+>"queue": "myOtherQueue", 
+>"message": "Alicia has a funky cat"
+>}</pre>
