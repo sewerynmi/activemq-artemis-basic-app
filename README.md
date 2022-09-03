@@ -58,3 +58,15 @@ Then observe message in the app console logs.
 >"queue": "myOtherQueue", 
 >"message": "Alicia has a funky cat"
 >}</pre>
+
+
+#### 03 Sept 2022 :  Sending message to other queue specified in request body
+
+>**Added:** MySQL db (docker compose file) and Flyway for DB migrations.
+> 
+> Flyway migrations will create tables and add some data to start.
+> At this stage I am improvising a bit with technologies. 
+> 
+> The plan is to create and API to upload .xls files via REST API and load it's content to the DB
+> without data duplications. For this reason I want to use messaging system as the timeout on the REST API can be quite high and 
+> asynchronous requests seems to be a better plan at this stage. 
