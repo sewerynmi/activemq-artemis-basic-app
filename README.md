@@ -1,4 +1,5 @@
 # Basic Java Messaging app with use of Apache ActiveMQ Artemis
+#### This example is for Native version of Artemis, not the Embeded one.
 
 ## Run Artemis as Docker container
 `docker run -p8161:8161 -p61616:61616 --name artemis joylife/apache-artemis:arm64`
