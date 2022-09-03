@@ -25,9 +25,9 @@ This one is for M1 Chip. Remove tag `arm64` for Intel CPU.
 ## Login to ActiveMQ console
 `http://localhost:8161/`
 
-Username : `artemis` (or your custom username)
+Username : `artemis` (or your custom username) , I've used `john` in this example and docker-compose.yml
  
-Password : `artemis` (or your custom password)
+Password : `artemis` (or your custom password) , I've used `mama` in this example and docker-compose.yml
 
 ## Sending test message via Postman
 
