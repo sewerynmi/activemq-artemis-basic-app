@@ -1,28 +1,34 @@
-version: '2'
+version: '3.8'
 services:
   artemis:
-    image: joylife/apache-artemis:arm64
+    image: quay.io/artemiscloud/activemq-artemis-broker
     container_name: artemix-basics
     environment:
-      ARTEMIS_USER: "john"
-      ARTEMIS_PASSWORD: "mama"
+        AMQ_USER: quarkus
+        AMQ_PASSWORD: quarkus
     ports:
-      - "8161:8161"
-      - "61616:61616"
+      - 8161:8161
+      - 61616:61616
   db:
-    image: arm64v8/mysql:oracle # change image for intel cpu
-    container_name: mysql-artemix-basics
+    image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: 'homelessness'
-      MYSQL_USER: 'john'
-      MYSQL_PASSWORD: 'mama'
-      MYSQL_ROOT_PASSWORD: 'mama'
+      - MYSQL_DATABASE=homelessness
+      - MYSQL_ROOT_PASSWORD=mama
+      - MYSQL_USER=john
+      - MYSQL_PASSWORD=mama
     ports:
       - '3306:3306'
-    expose:
-      - '3306'
     volumes:
-      - my-db:/var/lib/mysql
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
+
 volumes:
-  my-db:
+  db:
+    driver: local
+
