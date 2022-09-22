@@ -70,3 +70,13 @@ Then observe message in the app console logs.
 > The plan is to create and API to upload .xls files via REST API and load it's content to the DB
 > without data duplications. For this reason I want to use messaging system as the timeout on the REST API can be quite high and 
 > asynchronous requests seems to be a better plan at this stage. 
+
+
+#### 20 Sept 2022: Added - uploading files via @Post request
+> To upload file via Postman. Use correct endpoint (for 20-09-22 it is: http://localhost:8080/message/send/file) 
+> 
+> method: POST
+> 
+> Set BODY to `form-data`
+> 
+> VALUE : pick file to upload, as KEY type 'file'
