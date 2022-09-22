@@ -41,7 +41,7 @@ Then observe message in the app console logs.
 
 # Updates
 
-#### 03 Sept 2022 :  Sending message to other queue specified in request body
+#### 16 Sept 2022 :  Sending message to other queue specified in request body
 
 >**Added:** sending messages to a queue specified in the POST request. The queue should exist (check `application.properties` file) as receivers at this stage are 
 > designed to read messages from existing queues, so do not play hero by sending messages to unknown queues ok ? :)
@@ -58,9 +58,11 @@ Then observe message in the app console logs.
 >"queue": "myOtherQueue", 
 >"message": "Alicia has a funky cat"
 >}</pre>
+>
+> Changed docker images to Intel versions. Also used MySQL 8.0 image and Artemis to : `quay.io/artemiscloud/activemq-artemis-broker`
 
 
-#### 03 Sept 2022 :  Sending message to other queue specified in request body
+#### 17 Sept 2022 :  Sending message to other queue specified in request body
 
 >**Added:** MySQL db (docker compose file) and Flyway for DB migrations.
 > 
